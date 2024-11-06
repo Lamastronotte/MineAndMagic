@@ -22,7 +22,7 @@ public:
   Vector2* texCoords;
   Utils::Size size;
 
-  void generate(int* data, Utils::Size gridSize, int textureNum); // the texture is the id for a texture grid in texture manager
+  void generate(int* data, Utils::Size gridSize, int textureNum); // textureNum is the number of textures in the texture grid
   void regen(); // remakes the textures of all tiles
   void genFromFile(const char* filePath); // generate the tilemap from the file
 
