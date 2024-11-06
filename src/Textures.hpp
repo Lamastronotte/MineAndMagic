@@ -6,24 +6,28 @@ access any textures from any file aslong as they are loaded
 */
 
 #include <raylib.h>
+#include <string>
 
-class TextureManager {
-public:
-  Texture2D* textures;
+const int totalTexture = 3;
 
-  void init() {
+Texture2D textures[totalTexture];
 
-  }
+void LoadAllTextures()
+{
+  const char *names[] = {
+    "./Graphics/bananes.png",
+    "./Graphics/kitty.png",
+    "./Graphics/textureGrid.png"
+  };
 
-  void destroy() {
+  for(int i = 0; i < totalTexture; i++)
+    textures[i] = LoadTexture(names[i]);
+}
 
-  }
-
-  void get(int tid) {
-    
-  }
-};
-
-TextureManager Texturemanager;
+void UnloadAllTextures()
+{
+  for(int i = 0; i < totalTexture; i++)
+    UnloadTexture(textures[i]);
+}
 
 #endif

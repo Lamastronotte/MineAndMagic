@@ -6,18 +6,18 @@ int main()
 {
   InitWindow(800, 600, "MAM");
   InitAudioDevice(); 
-
+  
   SetTargetFPS(60); 
 
   Game game;
-  Texturemanager.init();
+  LoadAllTextures();
 
   while (!WindowShouldClose())
   {
     game.update();
   }
 
-  Texturemanager.destroy();
+  UnloadAllTextures();
   CloseAudioDevice();
   CloseWindow();
 }
